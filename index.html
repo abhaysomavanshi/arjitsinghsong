@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arijit Singh - Music World</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8e0e00, #1f1c18);
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        nav {
+            background: #181818;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #151515;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #bbb;
+        }
+
+        .section {
+            padding: 40px 7%;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            border-left: 5px solid #ff3333;
+            padding-left: 12px;
+        }
+
+        .songs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .song-card {
+            background: #1d1d1d;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .song-card:hover {
+            transform: translateY(-5px);
+            background: #252525;
+        }
+
+        .song-number {
+            color: #ff4d4d;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .song-card h3 {
+            margin: 10px 0 5px;
+            font-size: 20px;
+        }
+
+        .song-card p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        footer {
+            background: #181818;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+            color: #aaa;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                margin: 0 6px;
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 30px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>🎵 Arijit Singh</h1>
+        <p>The Voice of Love & Emotions</p>
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#sad">Sad Songs</a>
+        <a href="#love">Love Songs</a>
+        <a href="#party">Party Music</a>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <h2>Welcome to Arijit Singh Music World ❤️</h2>
+        <p>Listen to your favourite songs and enjoy the music.</p>
+    </section>
+
+
+    <!-- SAD SONGS -->
+    <section class="section" id="sad">
+
+        <h2>😢 Top 10 Sad Songs</h2>
+
+        <div class="songs">
+
+            <div class="song-card">
+                <span class="song-number">01</span>
+                <h3>Channa Mereya</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/channa-mereya.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">02</span>
+                <h3>Agar Tum Saath Ho</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/agar-tum-saath-ho.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">03</span>
+                <h3>Phir Bhi Tumko Chaahunga</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/phir-bhi-tumko-chaahunga.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">04</span>
+                <h3>Hamari Adhuri Kahani</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/hamari-adhuri-kahani.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">05</span>
+                <h3>Khairiyat</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/khairiyat.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">06</span>
+                <h3>Humdard</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/humdard.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">07</span>
+                <h3>Tujhe Kitna Chahne Lage</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/tujhe-kitna-chahne-lage.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">08</span>
+                <h3>Phir Le Aaya Dil</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/phir-le-aaya-dil.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">09</span>
+                <h3>Laal Ishq</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/laal-ishq.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">10</span>
+                <h3>Bekhayali</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/bekhayali.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- LOVE SONGS -->
+    <section class="section" id="love">
+
+        <h2>❤️ Top 10 Love Songs</h2>
+
+        <div class="songs">
+
+            <div class="song-card">
+                <span class="song-number">01</span>
+                <h3>Tum Hi Ho</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/tum-hi-ho.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">02</span>
+                <h3>Kesariya</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/kesariya.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">03</span>
+                <h3>Apna Bana Le</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/apna-bana-le.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">04</span>
+                <h3>Ve Kamleya</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/ve-kamleya.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">05</span>
+                <h3>Samjhawan</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/samjhawan.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">06</span>
+                <h3>Hawayein</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/hawayein.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">07</span>
+                <h3>Gerua</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/gerua.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">08</span>
+                <h3>Janam Janam</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/janam-janam.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">09</span>
+                <h3>Ranjha</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/ranjha.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">10</span>
+                <h3>Satranga</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/satranga.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PARTY SONGS -->
+    <section class="section" id="party">
+
+        <h2>🕺 Top 10 Party Music</h2>
+
+        <div class="songs">
+
+            <div class="song-card">
+                <span class="song-number">01</span>
+                <h3>Nashe Si Chadh Gayi</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/nashe-si-chadh-gayi.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">02</span>
+                <h3>The Breakup Song</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/the-breakup-song.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">03</span>
+                <h3>Galti Se Mistake</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/galti-se-mistake.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">04</span>
+                <h3>Saturday Saturday</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/saturday-saturday.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">05</span>
+                <h3>Ilahi</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/ilahi.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">06</span>
+                <h3>Chal Ghar Chalen</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/chal-ghar-chalen.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">07</span>
+                <h3>Dilliwali Girlfriend</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/dilliwali-girlfriend.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">08</span>
+                <h3>Sooraj Dooba Hain</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/sooraj-dooba-hain.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">09</span>
+                <h3>High Heels</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/high-heels.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-card">
+                <span class="song-number">10</span>
+                <h3>Main Tera Boyfriend</h3>
+                <p>Arijit Singh</p>
+                <audio controls>
+                    <source src="songs/main-tera-boyfriend.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>🎵 <strong>Arijit Singh Music World</strong></p>
+        <p>School HTML Project | Created with HTML & CSS</p>
+    </footer>
+
+</body>
+</html>
+```
