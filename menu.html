@@ -1,0 +1,184 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arijit Singh - Menu</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8e0e00, #1f1c18);
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #ddd;
+            font-size: 18px;
+        }
+
+        .menu {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .menu h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background: #1d1d1d;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            background: #292929;
+        }
+
+        .menu-card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .menu-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .menu-card p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .menu-card a {
+            display: inline-block;
+            background: #e50914;
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .menu-card a:hover {
+            background: #ff3333;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .back a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #777;
+            padding: 10px 25px;
+            border-radius: 25px;
+        }
+
+        footer {
+            text-align: center;
+            background: #181818;
+            padding: 25px;
+            color: #aaa;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎵 Arijit Singh</h1>
+        <p>Music World</p>
+    </header>
+
+    <section class="menu">
+
+        <h2>☰ Music Menu</h2>
+
+        <div class="menu-container">
+
+            <div class="menu-card">
+                <div class="icon">🏠</div>
+                <h3>Home</h3>
+                <p>Go to Arijit Singh Music Home</p>
+                <a href="index.html">Open</a>
+            </div>
+
+            <div class="menu-card">
+                <div class="icon">😢</div>
+                <h3>Sad Songs</h3>
+                <p>Top 10 emotional songs</p>
+                <a href="index.html#sad">Listen</a>
+            </div>
+
+            <div class="menu-card">
+                <div class="icon">❤️</div>
+                <h3>Love Songs</h3>
+                <p>Top 10 romantic songs</p>
+                <a href="index.html#love">Listen</a>
+            </div>
+
+            <div class="menu-card">
+                <div class="icon">🕺</div>
+                <h3>Party Music</h3>
+                <p>Top 10 party songs</p>
+                <a href="index.html#party">Listen</a>
+            </div>
+
+        </div>
+
+        <div class="back">
+            <a href="index.html">← Back to Home</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>🎵 Arijit Singh Music World</p>
+        <p>School HTML Project</p>
+    </footer>
+
+</body>
+</html>
+```
