@@ -1,0 +1,305 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arijit Music - Subscription</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8e0e00, #1f1c18);
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #ddd;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 25px;
+        }
+
+        .box {
+            background: #1d1d1d;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .plan {
+            background: #292929;
+            padding: 15px 5px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .plan:hover {
+            background: #e50914;
+        }
+
+        .plan h3 {
+            font-size: 17px;
+        }
+
+        .plan p {
+            margin-top: 8px;
+            color: #ddd;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 7px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #303030;
+            color: white;
+            outline: none;
+        }
+
+        .payment-method {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .payment-method button {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #555;
+            border-radius: 8px;
+            background: #292929;
+            color: white;
+            cursor: pointer;
+        }
+
+        .payment-method button:hover {
+            background: #e50914;
+        }
+
+        .pay-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 30px;
+            background: #e50914;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .pay-btn:hover {
+            background: #ff3333;
+        }
+
+        .secure {
+            text-align: center;
+            color: #aaa;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .back a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #181818;
+            color: #aaa;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .plans {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎵 Arijit Singh Music</h1>
+        <p>Premium Subscription</p>
+    </header>
+
+    <div class="container">
+
+        <div class="box">
+
+            <h2>⭐ Choose Your Subscription</h2>
+
+            <div class="plans">
+
+                <div class="plan">
+                    <h3>1 Month</h3>
+                    <p>₹99</p>
+                </div>
+
+                <div class="plan">
+                    <h3>6 Months</h3>
+                    <p>₹499</p>
+                </div>
+
+                <div class="plan">
+                    <h3>1 Year</h3>
+                    <p>₹899</p>
+                </div>
+
+            </div>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email">
+
+            <label>Choose Payment Method</label>
+
+            <div class="payment-method">
+                <button type="button" onclick="showUPI()">UPI</button>
+                <button type="button" onclick="showCard()">Card</button>
+                <button type="button" onclick="showNetBanking()">Net Banking</button>
+            </div>
+
+            <div id="paymentArea">
+
+                <label>UPI ID</label>
+                <input type="text" placeholder="example@upi">
+
+            </div>
+
+            <button class="pay-btn" onclick="payNow()">
+                💳 Pay Now
+            </button>
+
+            <p class="secure">
+                🔒 Demo Payment Page — No real payment is processed.
+            </p>
+
+        </div>
+
+        <div class="back">
+            <a href="index.html">← Back to Home</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>🎵 Arijit Singh Music World</p>
+        <p>School HTML Project</p>
+    </footer>
+
+
+    <script>
+
+        function showUPI() {
+
+            document.getElementById("paymentArea").innerHTML = `
+                <label>UPI ID</label>
+                <input type="text" placeholder="example@upi">
+            `;
+        }
+
+
+        function showCard() {
+
+            document.getElementById("paymentArea").innerHTML = `
+                <label>Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456">
+
+                <label>Expiry Date</label>
+                <input type="text" placeholder="MM/YY">
+
+                <label>CVV</label>
+                <input type="password" placeholder="***">
+            `;
+        }
+
+
+        function showNetBanking() {
+
+            document.getElementById("paymentArea").innerHTML = `
+                <label>Select Bank</label>
+
+                <select>
+                    <option>Select Bank</option>
+                    <option>State Bank of India</option>
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>Axis Bank</option>
+                    <option>Bank of Baroda</option>
+                </select>
+            `;
+        }
+
+
+        function payNow() {
+
+            alert(
+                "Payment Demo Successful! 🎉\n\n" +
+                "Thank you for subscribing to Arijit Singh Music Premium."
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
