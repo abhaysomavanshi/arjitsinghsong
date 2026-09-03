@@ -1,104 +1,579 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Arijit Singh - Songs</title>
+<title>Arijit Singh - Menu</title>
 
 <style>
-body{
+
+*{
     margin:0;
-    background:#0b0b0b;
-    color:white;
-    font-family:Arial;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header{
+body{
+    font-family:Arial, sans-serif;
+    background:#080808;
+    color:white;
+}
+
+/* ================= MENU ================= */
+
+.navbar{
+    width:100%;
     background:#111;
-    padding:20px 8%;
+    padding:18px 35px;
     display:flex;
     justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.7);
 }
 
 .logo{
-    color:#ffcc00;
     font-size:25px;
+    font-weight:bold;
+    color:#ffd700;
+}
+
+.nav-menu{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-menu a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    padding:10px 14px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.nav-menu a:hover{
+    background:#ffd700;
+    color:#000;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background:linear-gradient(135deg,#151515,#000);
+}
+
+.hero h1{
+    font-size:45px;
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#bbb;
+    font-size:18px;
+}
+
+/* ================= MENU CARDS ================= */
+
+.menu-section{
+    max-width:1200px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.menu-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+.menu-title span{
+    color:#ffd700;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.menu-card{
+    background:#151515;
+    border:1px solid #333;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.menu-card:hover{
+    transform:translateY(-8px);
+    border-color:#ffd700;
+}
+
+.menu-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.menu-card h3{
+    color:#ffd700;
+    margin-bottom:10px;
+}
+
+.menu-card p{
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+.menu-card a{
+    display:inline-block;
+    background:#ffd700;
+    color:#000;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
     font-weight:bold;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
+/* ================= CONCERT GALLERY ================= */
+
+#concertPhotos{
+    display:none;
 }
 
-.container{
-    padding:50px 8%;
-}
-
-h1{
+.gallery-title{
     text-align:center;
-    color:#ffcc00;
+    font-size:35px;
+    margin:50px 0 30px;
 }
 
-.card{
-    background:#181818;
-    padding:25px;
-    margin:20px auto;
-    max-width:700px;
-    border-radius:15px;
+.gallery-title span{
+    color:#ffd700;
 }
 
-audio{
+.gallery{
+    width:92%;
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.photo-card{
+    background:#151515;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid #292929;
+    transition:.3s;
+}
+
+.photo-card:hover{
+    transform:scale(1.03);
+    border-color:#ffd700;
+}
+
+.photo-card img{
     width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+    cursor:pointer;
 }
+
+.photo-info{
+    padding:12px;
+    text-align:center;
+}
+
+.photo-info h3{
+    color:#ffd700;
+    font-size:16px;
+}
+
+.photo-info p{
+    color:#999;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* ================= LIGHTBOX ================= */
+
+.lightbox{
+    display:none;
+    position:fixed;
+    z-index:5000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.95);
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:85%;
+    border-radius:10px;
+}
+
+.close{
+    position:absolute;
+    right:35px;
+    top:20px;
+    font-size:50px;
+    cursor:pointer;
+    color:white;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:60px;
+    background:#111;
+    padding:25px;
+    text-align:center;
+    color:#888;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:8px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
 
-<div class="logo">🎵 Arijit Singh</div>
+<!-- ================= NAVIGATION ================= -->
 
-<nav>
-<a href="index.html">Home</a>
-<a href="menu.html">Songs</a>
-<a href="payment.html">Subscription</a>
+<nav class="navbar">
+
+    <div class="logo">
+        🎵 ARIJIT SINGH
+    </div>
+
+    <ul class="nav-menu">
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="songs.html">Songs</a>
+        </li>
+
+        <li>
+            <a href="#concertPhotos">📸 Photos</a>
+        </li>
+
+        <li>
+            <a href="payment.html">💳 Payment</a>
+        </li>
+
+    </ul>
+
 </nav>
 
-</header>
 
-<div class="container">
+<!-- ================= HERO ================= -->
 
-<h1>🎶 Arijit Singh Songs</h1>
+<section class="hero">
 
-<div class="card">
-<h2>Song 1</h2>
-<p>Listen to your music</p>
-<audio controls>
-<source src="song.mp3" type="audio/mpeg">
-</audio>
+    <h1>Arijit Singh Fan Website</h1>
+
+    <p>
+        Music • Concerts • Memories • Live Performances
+    </p>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section class="menu-section">
+
+    <h2 class="menu-title">
+        Explore <span>Arijit Singh</span>
+    </h2>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+
+            <div class="menu-icon">🎵</div>
+
+            <h3>Songs</h3>
+
+            <p>
+                Listen to Arijit Singh's popular songs.
+            </p>
+
+            <a href="songs.html">
+                Open Songs
+            </a>
+
+        </div>
+
+
+        <!-- PHOTO OPTION -->
+
+        <div class="menu-card">
+
+            <div class="menu-icon">📸</div>
+
+            <h3>Concert Photos</h3>
+
+            <p>
+                Explore 100+ Arijit Singh concert memories.
+            </p>
+
+            <a href="#concertPhotos"
+               onclick="showGallery()">
+
+                View Photos
+
+            </a>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <div class="menu-icon">🎤</div>
+
+            <h3>Live Concerts</h3>
+
+            <p>
+                Discover live performance moments.
+            </p>
+
+            <a href="#concertPhotos">
+                Explore
+            </a>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <div class="menu-icon">💳</div>
+
+            <h3>Subscription</h3>
+
+            <p>
+                Subscribe to the fan website.
+            </p>
+
+            <a href="payment.html">
+                Payment
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 100 PHOTO GALLERY ================= -->
+
+<section id="concertPhotos">
+
+    <h2 class="gallery-title">
+        📸 Arijit Singh <span>Concert Gallery</span>
+    </h2>
+
+    <div class="gallery" id="gallery">
+
+        <!--
+        PHOTO CARDS WILL BE CREATED
+        AUTOMATICALLY USING JAVASCRIPT
+        -->
+
+    </div>
+
+</section>
+
+
+<!-- ================= LIGHTBOX ================= -->
+
+<div class="lightbox" id="lightbox">
+
+    <span class="close"
+          onclick="closeImage()">
+        &times;
+    </span>
+
+    <img id="bigImage">
+
 </div>
 
-<div class="card">
-<h2>Song 2</h2>
-<p>Listen to your music</p>
-<audio controls>
-<source src="song2.mp3" type="audio/mpeg">
-</audio>
-</div>
 
-<div class="card">
-<h2>Song 3</h2>
-<p>Listen to your music</p>
-<audio controls>
-<source src="song3.mp3" type="audio/mpeg">
-</audio>
-</div>
+<footer>
 
-</div>
+    © 2026 Arijit Singh Fan Website 🎵
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   CONCERT PHOTO DATA
+   ========================================== */
+
+const photos = [
+
+"https://commons.wikimedia.org/wiki/Special:FilePath/Arijit%20Singh%20performance%20at%20Chandigarh%202025.jpg",
+
+"https://commons.wikimedia.org/wiki/Special:FilePath/Arijit%20Singh%20live%20performance%20at%20Ovo%20arena%20Wembley%20on%2016%20July%202016.jpg",
+
+"https://commons.wikimedia.org/wiki/Special:FilePath/Arijit%20Singh%20performance%20at%20MMRDA%20ground%20Mumbai%20in%202018.jpg",
+
+"https://commons.wikimedia.org/wiki/Special:FilePath/Arijit%20Singh%20performance%20at%20Hyderabad%20on%207th%20December%2C%202024.jpg",
+
+"https://commons.wikimedia.org/wiki/Special:FilePath/Arijit%20Singh%20performance%20at%20Mauritius%20on%2029%20oct%202023.jpg",
+
+"https://commons.wikimedia.org/wiki/Special:FilePath/Arijit%20Singh%20performing%20live%20at%20Miranda%20House%27s%20Tempest%2714%20hosted%20by%20Bharat%20Jain.JPG"
+
+];
+
+
+/*
+================================================
+IMPORTANT
+
+वरचे URLs हे उदाहरण म्हणून उपलब्ध licensed
+Wikimedia Commons photographs आहेत.
+
+100 फोटो करण्यासाठी फक्त licensed/public-domain
+फोटो URLs photos[] मध्ये add कर.
+
+कॉपीराइट असलेले random Google Images URLs वापरू नको.
+================================================
+*/
+
+
+const gallery =
+document.getElementById("gallery");
+
+
+function createGallery(){
+
+    gallery.innerHTML = "";
+
+    photos.forEach((photo,index)=>{
+
+        const card =
+        document.createElement("div");
+
+        card.className =
+        "photo-card";
+
+        card.innerHTML = `
+
+            <img
+                src="${photo}"
+                alt="Arijit Singh Concert ${index+1}"
+                onclick="openImage('${photo}')"
+            >
+
+            <div class="photo-info">
+
+                <h3>
+                    Concert Photo ${index+1}
+                </h3>
+
+                <p>
+                    Arijit Singh Live Performance
+                </p>
+
+            </div>
+
+        `;
+
+        gallery.appendChild(card);
+
+    });
+
+}
+
+
+function showGallery(){
+
+    document.getElementById(
+        "concertPhotos"
+    ).style.display = "block";
+
+    createGallery();
+
+    setTimeout(()=>{
+
+        document.getElementById(
+            "concertPhotos"
+        ).scrollIntoView({
+            behavior:"smooth"
+        });
+
+    },100);
+
+}
+
+
+function openImage(src){
+
+    document.getElementById(
+        "lightbox"
+    ).style.display = "flex";
+
+    document.getElementById(
+        "bigImage"
+    ).src = src;
+
+}
+
+
+function closeImage(){
+
+    document.getElementById(
+        "lightbox"
+    ).style.display = "none";
+
+}
+
+
+</script>
 
 </body>
 </html>
+```
