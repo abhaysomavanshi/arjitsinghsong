@@ -1,196 +1,394 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arijit Singh - Music World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+    <title>Arijit Singh Songs</title>
 
-body{
-    background:#0b0b0b;
-    color:white;
-}
+    <style>
 
-header{
-    background:#111;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:10;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#ffcc00;
-}
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            min-height: 100vh;
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-}
+            /* ARIJIT SINGH BACKGROUND PHOTO */
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,0.65),
+                    rgba(0,0,0,0.75)
+                ),
+                url("arijit-bg.jpg");
 
-nav a:hover{
-    color:#ffcc00;
-}
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
 
-.hero{
-    min-height:85vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:40px;
-    background:linear-gradient(#0008,#0008),
-    url("https://images.unsplash.com/photo-1516280440614-37939bbacd81")
-    center/cover;
-}
 
-.hero h1{
-    font-size:60px;
-    color:#ffcc00;
-}
+        /* ================= NAVBAR ================= */
 
-.hero p{
-    font-size:22px;
-    margin:20px 0;
-}
+        nav {
+            width: 100%;
+            padding: 18px 40px;
 
-.btn{
-    display:inline-block;
-    background:#ffcc00;
-    color:#111;
-    padding:13px 25px;
-    border-radius:25px;
-    text-decoration:none;
-    font-weight:bold;
-}
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-section{
-    padding:60px 8%;
-}
+            background: rgba(0,0,0,0.75);
 
-.title{
-    text-align:center;
-    font-size:35px;
-    color:#ffcc00;
-    margin-bottom:35px;
-}
+            position: sticky;
+            top: 0;
+            z-index: 1000;
 
-.songs{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
+            backdrop-filter: blur(8px);
+        }
 
-.song{
-    background:#181818;
-    padding:25px;
-    border-radius:15px;
-}
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffd700;
+        }
 
-.song h3{
-    margin-bottom:15px;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
 
-audio{
-    width:100%;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 9px 13px;
+            border-radius: 7px;
+            transition: 0.3s;
+        }
 
-.about{
-    text-align:center;
-    line-height:1.8;
-    max-width:850px;
-    margin:auto;
-}
+        nav ul li a:hover {
+            background: #ffd700;
+            color: black;
+        }
 
-footer{
-    text-align:center;
-    padding:25px;
-    background:#111;
-    color:#aaa;
-}
-</style>
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 75vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            padding: 30px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+
+            background: rgba(0,0,0,0.45);
+
+            padding: 45px;
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(4px);
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+
+        /* ================= BUTTONS ================= */
+
+        .buttons {
+            margin-top: 30px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+
+            background: #ffd700;
+            color: black;
+
+            padding: 13px 25px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
+        .btn-dark {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 1px solid white;
+        }
+
+        .btn-dark:hover {
+            background: white;
+            color: black;
+        }
+
+
+        /* ================= SONG SECTION ================= */
+
+        .songs {
+            padding: 60px 20px;
+
+            background: rgba(0,0,0,0.75);
+        }
+
+        .songs h2 {
+            text-align: center;
+            color: #ffd700;
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .song-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 20px;
+        }
+
+        .song-card {
+            background: rgba(255,255,255,0.08);
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            transition: 0.3s;
+        }
+
+        .song-card:hover {
+            transform: translateY(-7px);
+            border-color: #ffd700;
+        }
+
+        .song-card h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .song-card p {
+            color: #ccc;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            background: rgba(0,0,0,0.9);
+
+            color: #aaa;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .hero-content {
+                padding: 30px 20px;
+            }
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <div class="logo">🎵 Arijit Singh</div>
+
+    <!-- ================= NAVIGATION ================= -->
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="menu.html">Songs</a>
-        <a href="payment.html">Subscription</a>
+
+        <div class="logo">
+            🎵 ARIJIT SINGH
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="menu.html">Menu</a>
+            </li>
+
+            <li>
+                <a href="songs.html">Songs</a>
+            </li>
+
+            <li>
+                <a href="concert.html">📸 Photos</a>
+            </li>
+
+            <li>
+                <a href="payment.html">💳 Payment</a>
+            </li>
+
+        </ul>
+
     </nav>
-</header>
 
-<section class="hero">
-    <div>
-        <h1>Arijit Singh</h1>
-        <p>The Voice of Millions ❤️</p>
-        <a href="menu.html" class="btn">Explore Songs</a>
-    </div>
-</section>
 
-<section>
-    <h2 class="title">🎧 Music Player</h2>
+    <!-- ================= HERO ================= -->
 
-    <div class="songs">
+    <section class="hero">
 
-        <div class="song">
-            <h3>Song 1</h3>
-            <audio controls>
-                <source src="song.mp3" type="audio/mpeg">
-                Your browser does not support audio.
-            </audio>
+        <div class="hero-content">
+
+            <h1>Arijit Singh</h1>
+
+            <h2>🎵 Songs & Music</h2>
+
+            <p>
+                Welcome to the Arijit Singh Songs website.
+                Explore beautiful music, memorable songs
+                and live concert moments.
+            </p>
+
+            <div class="buttons">
+
+                <a href="songs.html" class="btn">
+                    🎧 Explore Songs
+                </a>
+
+                <a href="concert.html" class="btn btn-dark">
+                    📸 Concert Photos
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="song">
-            <h3>Song 2</h3>
-            <audio controls>
-                <source src="song2.mp3" type="audio/mpeg">
-                Your browser does not support audio.
-            </audio>
+    </section>
+
+
+    <!-- ================= SONGS ================= -->
+
+    <section class="songs">
+
+        <h2>Popular Songs</h2>
+
+        <div class="song-container">
+
+            <div class="song-card">
+                <h3>Kesariya</h3>
+                <p>Arijit Singh</p>
+            </div>
+
+            <div class="song-card">
+                <h3>Tum Hi Ho</h3>
+                <p>Arijit Singh</p>
+            </div>
+
+            <div class="song-card">
+                <h3>Channa Mereya</h3>
+                <p>Arijit Singh</p>
+            </div>
+
+            <div class="song-card">
+                <h3>Apna Bana Le</h3>
+                <p>Arijit Singh</p>
+            </div>
+
         </div>
 
-        <div class="song">
-            <h3>Song 3</h3>
-            <audio controls>
-                <source src="song3.mp3" type="audio/mpeg">
-                Your browser does not support audio.
-            </audio>
-        </div>
+    </section>
 
-    </div>
-</section>
 
-<section>
-    <h2 class="title">About Arijit Singh</h2>
+    <!-- ================= FOOTER ================= -->
 
-    <div class="about">
-        <p>
-            Arijit Singh is one of the most popular playback singers
-            in Indian music. His soulful voice and emotional singing
-            have made him loved by millions of music fans.
-        </p>
-    </div>
-</section>
+    <footer>
 
-<footer>
-    © 2026 Arijit Singh Music World | Created for Educational Project
-</footer>
+        © 2026 Arijit Singh Songs Website 🎵
+
+    </footer>
+
 
 </body>
+
 </html>
+```
